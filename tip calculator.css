@@ -1,0 +1,227 @@
+:root {
+  --font-family: monospace;
+  --color0: white;
+  --color1: hsl(189, 41%, 97%);
+  --color2: hsl(183, 84%, 40%);
+  --color3: hsl(186, 14%, 43%);
+  --color4: hsl(183, 100%, 15%);
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+#wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: hsl(185, 41%, 84%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  margin-bottom: 50px;
+}
+.calculator {
+  width: 60%;
+  height: 60%;
+  min-height: 400px;
+  max-width: 792px;
+  max-height: 400px;
+  background: var(--color1);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family);
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.5);
+}
+.calculator .info {
+  width: 55%;
+  height: 90%;
+  margin-left: 16px;
+  margin-right: 8px;
+}
+.calculator .result {
+  width: 45%;
+  height: 90%;
+  background: var(--color4);
+  margin-left: 8px;
+  margin-right: 16px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Result */
+.result .tipAmount,
+.result .total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 16px;
+}
+.result .firstp {
+  color: var(--color1);
+}
+.result .secondp {
+  color: var(--color3);
+}
+.result .receipt {
+  color: var(--color2);
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+.result .resetButton {
+  width: 80%;
+  height: 40px;
+  align-self: center;
+  margin-top: 100px;
+  margin-bottom: 2px;
+  font-family: var(--font-family);
+  border: none;
+  border-radius: 8px;
+  background-color: var(--color2);
+  color: var(--color1);
+  font-weight: 800;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.result .resetButton:hover {
+  transform: translateY(-5px);
+}
+
+/* info */
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding-left: 25px;
+}
+.info div {
+  width: 100%;
+}
+.info p {
+  display: block;
+  color: var(--color3);
+}
+.info .numOfPeople p {
+  display: inline;
+}
+.info .numOfPeople .errorMessage {
+  margin-left: 120px;
+  color: red;
+  display: none;
+}
+.info .bill,
+.info .numOfPeople {
+  position: relative;
+}
+
+.info .bill input,
+.info .numOfPeople input {
+  width: 95%;
+  height: 35px;
+  border: 1px solid var(--color2);
+  border-radius: 5px;
+  outline-color: var(--color2);
+  padding-left: 30px;
+  color: var(--color4);
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-top: 8px;
+}
+.info .tip input {
+  width: 25%;
+  height: 45px;
+  margin: 8px;
+  margin-left: 0px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--color4);
+  color: var(--color0);
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.info .tip input:hover {
+  background-color: var(--color2);
+}
+.info .tip .specialInput {
+  background-color: var(--color0);
+  border: 1px solid var(--color2);
+  outline-color: var(--color2);
+  color: var(--color4);
+  padding-left: 10px;
+  cursor: text;
+}
+.info .tip .specialInput:hover {
+  background-color: var(--color0);
+}
+.info .bill img,
+.info .numOfPeople img {
+  position: absolute;
+  left: 2%;
+  bottom: 20%;
+}
+
+/* for width up to 650px */
+@media all and (min-width: 0px) and (max-width: 650px) {
+  #wrapper {
+    width: 100%;
+    height: fit-content;
+  }
+  .calculator {
+    width: 95%;
+    height: fit-content;
+    flex-direction: column;
+  }
+  .logo {
+    margin-top: 25px;
+  }
+  .calculator .info {
+    width: 95%;
+    height: fit-content;
+    margin: 25px 0px;
+  }
+  .calculator .result {
+    width: 95%;
+    height: fit-content;
+    margin: 25px 0px;
+  }
+  .result .resetButton {
+    margin-bottom: 25px;
+  }
+
+  .info .bill input {
+    margin-bottom: 20px;
+  }
+  .info .tip {
+    margin-bottom: 20px;
+  }
+  .info .bill img {
+    bottom: 38%;
+  }
+}
+
+/* for width up to 850px */
+@media all and (min-width: 650px) and (max-width: 890px) {
+  .calculator {
+    width: 85%;
+  }
+  .result .resetButton {
+    margin-top: 85px;
+    margin-bottom: 10px;
+  }
+}

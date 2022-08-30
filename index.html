@@ -1,0 +1,99 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip calculator</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="tip calculator.css" />
+    <!-- JS -->
+    <script src="tip calculator.js"></script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="images/logo.svg" width="75" />
+      </div>
+
+      <!-- Calculator -->
+      <div class="calculator">
+        <div class="info">
+          <div class="bill">
+            <p>Bill</p>
+            <input id="bill" type="number" min="1" oninput="billFunc(this)" />
+            <img src="images/icon-dollar.svg" width="10" />
+          </div>
+          <div class="tip">
+            <p>Select Tip %</p>
+            <input
+              id="tipButton"
+              type="button"
+              value="5%"
+              onclick="tipFunc(this)"
+            />
+            <input
+              id="tipButton2"
+              type="button"
+              value="10%"
+              onclick="tipFunc(this)"
+            />
+            <input
+              id="tipButton3"
+              type="button"
+              value="15%"
+              onclick="tipFunc(this)"
+            />
+            <input
+              id="tipButton4"
+              type="button"
+              value="25%"
+              onclick="tipFunc(this)"
+            />
+            <input
+              id="tipButton5"
+              type="button"
+              value="50%"
+              onclick="tipFunc(this)"
+            />
+            <input
+              class="specialInput"
+              type="number"
+              oninput="tipAmountFunc()"
+              min="1"
+            />
+          </div>
+          <div class="numOfPeople">
+            <p>Number of People</p>
+            <p class="errorMessage">Can't be zero</p>
+            <input
+              id="numPeople"
+              type="number"
+              min="0"
+              oninput="numOfPeople()"
+            />
+            <img src="images/icon-person.svg" width="10" />
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="tipAmount">
+            <span>
+              <p class="firstp">Tip Amount</p>
+              <p class="secondp">/ person</p>
+            </span>
+            <span class="receipt">$<span id="receiptOne">0.00</span></span>
+          </div>
+          <div class="Total">
+            <span>
+              <p class="firstp">Total</p>
+              <p class="secondp">/ person</p>
+            </span>
+            <span class="receipt">$<span id="receiptTwo">0.00</span></span>
+          </div>
+          <button class="resetButton" onclick="reset()">RESET</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
